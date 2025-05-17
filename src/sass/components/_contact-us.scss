@@ -1,0 +1,91 @@
+@use "../abstract/constants" as constants;
+@use "../abstract/mixins" as mixins;
+
+.contact-us {
+  background: constants.$color-background;
+  padding: 62px 0;
+  @include mixins.media-tablet {
+    text-align: center;
+  }
+}
+
+.contact-us-container {
+  @include mixins.media-tablet {
+    flex-direction: column;
+  }
+}
+
+.contact-us__title {
+  margin: 0 0 17px;
+}
+
+.contact-us__content {
+  max-width: 520px;
+  @include mixins.media-tablet {
+    max-width: 100%;
+    margin-bottom: 52px;
+  }
+}
+
+.contact-us__text {
+  margin: 0 0 34px;
+}
+
+.contact-us__link {
+  margin: 0 0 19px;
+  display: flex;
+  align-items: center;
+  @include mixins.font($size: 2.5rem, $height: 2.6rem, $weight: normal);
+  @include mixins.media-tablet {
+    justify-content: center;
+  }
+  a {
+    margin-left: 11px;
+    color: constants.$color-text;
+    text-decoration: none;
+  }
+  &:hover {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.contact-us__form {
+  input,
+  textarea {
+    border: 1px solid constants.$color-light;
+    background-color: constants.$color-light;
+    padding: 10px 21px;
+    border-radius: 5px;
+    &:focus {
+      border-color: constants.$color-primary;
+      outline: none;
+    }
+  }
+  textarea {
+    resize: none;
+    width: 100%;
+    height: 160px;
+  }
+}
+
+.contact-us__line {
+  margin-bottom: 19px;
+  @include mixins.media-mobile {
+    flex-direction: column;
+    margin-bottom: 0;
+    > * {
+      margin-bottom: 19px;
+    }
+  }
+}
+
+.contact-us__button {
+  > * {
+    min-width: 117px;
+  }
+  @include mixins.media-mobile {
+    margin-top: 24px;
+  }
+}

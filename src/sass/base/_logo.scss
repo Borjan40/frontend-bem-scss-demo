@@ -1,0 +1,24 @@
+@use "../abstract/constants" as constants;
+@use "../abstract/placeholders";
+
+.logo {
+  display: flex;
+}
+
+.logo-object {
+  width: 160px;
+  height: 30px;
+}
+
+.logo-path {
+  @extend %transition;
+}
+
+.logo-svg {
+  cursor: pointer;
+  &:hover {
+    .logo-path {
+      fill: constants.$color-primary;
+    }
+  }
+}

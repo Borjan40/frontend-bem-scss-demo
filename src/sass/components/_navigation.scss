@@ -1,0 +1,25 @@
+@use "../abstract/constants" as constants;
+@use "../abstract/mixins" as mixins;
+@use "../abstract/placeholders";
+
+.navigation {
+  display: flex;
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+}
+
+.navigation__link {
+  list-style: none;
+  padding: 0 10px;
+  cursor: pointer;
+  @extend %transition;
+  &:hover {
+    color: constants.$color-primary;
+  }
+}
+
+.header__navigation {
+  @include mixins.media-tablet {
+    display: none;
+  }
+}

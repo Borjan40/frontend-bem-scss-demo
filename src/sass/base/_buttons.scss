@@ -1,0 +1,50 @@
+@use "../abstract/constants" as constants;
+@use "../abstract/placeholders";
+
+.button {
+  @extend %font-prim;
+  padding: 11px 25px 13px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  @extend %transition;
+  &_bordered {
+    background: constants.$color-light;
+    border: 1px solid constants.$color-border;
+    color: constants.$color-text;
+    &:hover {
+      background: constants.$color-hovered;
+      border-color: constants.$color-hovered;
+    }
+  }
+  &_colored {
+    background: constants.$color-primary;
+    color: constants.$color-light;
+    border: 1px solid constants.$color-primary;
+    &:hover {
+      background: constants.$color-additional;
+      border-color: constants.$color-additional;
+    }
+  }
+}
+
+.link-button {
+  color: constants.$color-primary;
+  @extend %font-add;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.3s;
+  &:hover {
+    color: constants.$color-red;
+    .ico_play {
+      background-image: url("../img/icons/play-hover.svg");
+    }
+  }
+}
+
+.link-button__text {
+  margin-left: 9px;
+}
